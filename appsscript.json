@@ -1,0 +1,39 @@
+{
+  "timeZone": "America/New_York",
+  "dependencies": {
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "oauthScopes": ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/userinfo.email"],
+  "runtimeVersion": "V8",
+  "sheets": {
+    "macros": [{
+      "menuName": "숙제 옮기기",
+      "functionName": "myFunction"
+    }, {
+      "menuName": "fillBlue",
+      "functionName": "fillBlue"
+    }, {
+      "menuName": "fillCyan",
+      "functionName": "fillCyan"
+    }, {
+      "menuName": "fillGreen",
+      "functionName": "fillGreen"
+    }, {
+      "menuName": "fillOrange",
+      "functionName": "fillOrange"
+    }, {
+      "menuName": "countBackground",
+      "functionName": "countBackground"
+    }, {
+      "menuName": "fillgray",
+      "functionName": "fillgray"
+    }, {
+      "menuName": "fillPurple",
+      "functionName": "fillPurple2",
+      "defaultShortcut": "Ctrl+Alt+Shift+3"
+    }, {
+      "menuName": "fill pink",
+      "functionName": "fillpink"
+    }]
+  }
+}
