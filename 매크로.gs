@@ -2,7 +2,8 @@
 
 function fillPurple() {
   var spreadsheet = SpreadsheetApp.getActive();
-  spreadsheet.getActiveRangeList().setBackground('#ead1dc');
+  spreadsheet.getActiveRange().setBackground('#ead1dc');
+  insertTime();
 };
 
 function fillBlue() {
@@ -33,12 +34,14 @@ function fillgray() {
 function fillyellow() {
   var spreadsheet = SpreadsheetApp.getActive();
   spreadsheet.getActiveRangeList().setBackground('#ffff00');
+  insertTime();
 };
 
 
 function fillmint() {
   var spreadsheet = SpreadsheetApp.getActive();
   spreadsheet.getActiveRangeList().setBackground('#d9ead3');
+  insertTime();
 };
 
 function duplicateAndOrganizeActiveSheet(){

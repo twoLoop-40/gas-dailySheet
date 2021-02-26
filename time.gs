@@ -13,12 +13,13 @@ const SheetProto = {
 }
 
 const RangeProto = {
-  makeRange(A1){
-    return A1 ? this.currSheet().getRange(A1)
+  makeRange(loc){
+    // loc : array
+    return loc ? this.currSheet().getRange(...loc)
       : this.currSheet().getActiveRange();
   },
   valueOn(value){
-    this.makeRange().setValue(value);
+    this.makeRange(this.cellLoc).setValue(value);
   }
 
 };
@@ -26,12 +27,22 @@ Object.setPrototypeOf(RangeProto, SheetProto);
 
 function insertDate(){
   const sheetHandler = Object.create(RangeProto);
+
   let date = makeDate();
   
   sheetHandler.valueOn(date);
 
 }
 
+function insertTime(){
+  const sheetHandler = Object.create(RangeProto);
+  let time = makeTime();
+  let currentCell = sheetHandler.makeRange();
+  let rowNum = currentCell.getRow();
+  sheetHandler.cellLoc = [rowNum, 8]
+  console.log(sheetHandler)
+  sheetHandler.valueOn(time);
+}
 
 function makeDate(){
   today = new Date();
@@ -44,5 +55,6 @@ function makeDate(){
 
 function makeTime(){
   today = new Date();
-  console.log(today)
+  //console.log(today.toLocaleTimeString('ko-Kr'));
+  return today.toLocaleTimeString('en-US', {timeZone: "Asia/Seoul"});
 }
