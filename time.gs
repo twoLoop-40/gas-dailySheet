@@ -19,7 +19,11 @@ const RangeProto = {
       : this.currSheet().getActiveRange();
   },
   valueOn(value){
+    let cell = this.makeRange(this.cellLoc);
+    if(cell.getValue() === ''){
+      console.log(cell.getValue())
     this.makeRange(this.cellLoc).setValue(value);
+    }
   }
 
 };

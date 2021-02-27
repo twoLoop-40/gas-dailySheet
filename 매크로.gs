@@ -66,4 +66,5 @@ function fillPurple2() {
 function fillpink() {
   var spreadsheet = SpreadsheetApp.getActive();
   spreadsheet.getActiveRangeList().setBackground('#ead1dc');
+  
 };
